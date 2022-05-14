@@ -4,13 +4,17 @@ from cars.models import Car
 class Command(BaseCommand):
 
     def add_arguments(self, parser):
-        parser.add_argument('car_plate', type=str)
-        parser.add_argument('car_name', type=str)
+        parser.add_argument('CAR-PLATE', type=str)
+        parser.add_argument('CAR-NAME', type=str)
 
     def handle(self, *args, **kwargs):
         car_values = {
-            'car_plate': kwargs['car_plate'],
-            'car_name': kwargs['car_name'],
+            'car_plate': kwargs['CAR-PLATE'],
+            'car_name': kwargs['CAR-NAME'],
             }
-        car = Car(**car_values)
-        car.save()
+        try:
+            car = Car(**car_values)
+            car.save()
+            self.stdout.write(self.style.SUCCESS(f'Successfully save a new car'))
+        except Exception as e:
+            raise CommandError(f'{e}')
