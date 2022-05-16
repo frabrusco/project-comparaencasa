@@ -34,7 +34,7 @@ docker exec name-container-django python manage.py addcars car-plate car-name
 ## Test 
 Run tests
 ```sh
-docker exec name-container-django python manage.py tests
+docker exec name-container-django python manage.py test
 ```
 
 ## Build with
