@@ -13,6 +13,7 @@ git clone https://github.com/frabrusco/project-comparaencasa.git
 cd project-compraencasa
 docker-compose up
 ```
+!!Note that you have to leave ports 3306 for mysql and 8000 for django app free.
 
 ## Add an element
 When mysql and django servers are up.
