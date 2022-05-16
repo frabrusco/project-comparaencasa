@@ -27,7 +27,7 @@ docker exec name-container-django python manage.py addcars car-plate car-name
 ```
 
 ## Search elements
-- Open web browser and go to url https://0.0.0.0:8000
+- Open web browser and go to url http://0.0.0.0:8000/
 - Put a car plate in the input
 - Then press search
 
